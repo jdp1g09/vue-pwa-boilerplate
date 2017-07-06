@@ -17,6 +17,7 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <histogram :data="history" class="histogram"></histogram>
   </div>
 </template>
 
@@ -25,14 +26,30 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js PWA'
+      msg: 'Welcome to Your Vue.js PWA',
+      history: null
+    }
+  },
+  created () {
+    this.update()
+  },
+  methods: {
+    update () {
+      setTimeout(() => {
+        console.log('set history')
+        this.history = [{
+          _source: {
+            speed: 2
+          }
+        }]
+      }, 500)
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang='scss' scoped>
 h1, h2 {
   font-weight: normal;
 }
@@ -49,5 +66,10 @@ li {
 
 a {
   color: #42b983;
+}
+
+.histogram {
+  width: 50%;
+  margin-top: 20px;
 }
 </style>
