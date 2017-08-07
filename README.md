@@ -1,6 +1,6 @@
-# Vuew & Electron
+# Vue & Electron
 
-> A Vue.js wrapped with Electron (optional) project
+> A Vue.js application, with an NodeJS Express API, wrapped with Electron (optional) project.
 
 ## Build Setup
 
